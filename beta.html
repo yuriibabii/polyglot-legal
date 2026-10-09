@@ -24,6 +24,16 @@
   li { margin:0 0 10px; }
   html:not(.js) section + section { border-top:1px solid var(--line); margin-top:48px; padding-top:40px; }
   .js section[hidden] { display:none; }
+  .hero { float:right; width:120px; height:120px; margin:-8px -8px 0 12px; }
+  .step { margin:28px 0 40px; }
+  .step h3 { display:flex; align-items:center; gap:10px; font-size:19px; margin:0 0 6px; line-height:1.3; }
+  .num { flex:none; display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+         border-radius:50%; background:var(--action); color:#fff; font-size:16px; }
+  .m { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+       background:var(--action); color:#fff; font-size:12px; font-weight:700; vertical-align:2px; }
+  .shot { display:block; margin:16px auto 0; width:100%; height:auto; }
+  .shot.one { max-width:250px; }
+  .shot.two { max-width:520px; }
 </style>
 </head>
 <body>
@@ -32,22 +42,38 @@
   <span class="lang"><a href="#en" data-lang="en">English</a> · <a href="#uk" data-lang="uk">Українська</a></span></nav>
 
 <section id="en" lang="en">
+<img class="hero" src="beta/poly.png" width="120" height="120" alt="">
 <h1>Try Polyglot before it's out</h1>
 <p>Polyglot teaches French by starting with the words you already know. The beta runs through Apple's TestFlight app. It's free and takes about two minutes.</p>
 <a class="join" href="https://testflight.apple.com/join/q658wnPg">Join the Polyglot beta</a>
 <p class="note">Needs an iPhone with iOS 17 or later. On a computer? Open this page on your iPhone.</p>
 
 <h2>Install</h2>
-<ol>
-  <li>On your iPhone, tap <b>Join the Polyglot beta</b> above.</li>
-  <li>If you don't have TestFlight yet, the page sends you to the App Store. Install <b>TestFlight</b> (a free app from Apple), then come back here and tap the button again.</li>
-  <li>Tap <b>View in TestFlight</b>, then <b>Accept</b>, then <b>Install</b>.</li>
-  <li>Open Polyglot from your Home Screen. The small dot next to its name means it's a beta.</li>
-</ol>
+<div class="step">
+  <h3><span class="num">1</span>Open the invite on your iPhone</h3>
+  <p>Tap <b>Join the Polyglot beta</b> above. Apple's TestFlight page opens.</p>
+  <img class="shot one" src="beta/step-1-page.svg" width="296" height="596" alt="The TestFlight page: Step 1, Get TestFlight with a View in App Store button; Step 2, Join the beta with a View in TestFlight button.">
+</div>
+<div class="step">
+  <h3><span class="num">2</span>Get TestFlight (first time only)</h3>
+  <p>Tap <span class="m">1</span> <b>View in App Store</b> and get <b>TestFlight</b>, Apple's free app for betas. Already have it? Go to step 3.</p>
+  <img class="shot one" src="beta/step-2-app-store.svg" width="296" height="596" loading="lazy" alt="TestFlight in the App Store with the Get button marked.">
+</div>
+<div class="step">
+  <h3><span class="num">3</span>Accept and install</h3>
+  <p>Back on the TestFlight page, tap <span class="m">2</span> <b>View in TestFlight</b>. In TestFlight, tap <b>Accept</b>, then <b>Install</b>.</p>
+  <img class="shot two" src="beta/step-3-testflight.svg" width="640" height="596" loading="lazy" alt="TestFlight showing Polyglot: first the Accept button, then the Install button.">
+</div>
+<div class="step">
+  <h3><span class="num">4</span>Open Polyglot</h3>
+  <p>Find Polyglot on your Home Screen. The small orange dot before its name means it's a beta. Tap <b>Get started</b> and Poly takes it from there.</p>
+  <img class="shot two" src="beta/step-4-home.svg" width="640" height="596" loading="lazy" alt="Polyglot on the Home Screen with a small dot before its name, then the app's first screen.">
+</div>
 
 <h2>Send feedback</h2>
-<p>This is what helps most. Take a screenshot in the app, tap the preview in the corner, tap <b>Done</b> or the Share button, and choose <b>Share Beta Feedback</b>. Add a note on what was confusing, broken or slow.</p>
-<p>You can also open TestFlight, tap Polyglot and choose <b>Send Beta Feedback</b>, or email <a href="mailto:gemplay.app@gmail.com">gemplay.app@gmail.com</a>.</p>
+<p>This is what helps most. <span class="m">1</span> Take a screenshot in the app and tap the preview in the corner, <span class="m">2</span> tap <b>Done</b>, <span class="m">3</span> choose <b>Share Beta Feedback</b>. Add a note on what was confusing, broken or slow.</p>
+<img class="shot two" src="beta/feedback.svg" width="640" height="596" loading="lazy" alt="A screenshot preview in the corner of Polyglot, then the menu after Done with Share Beta Feedback marked.">
+<p style="margin-top:16px">You can also open TestFlight, tap Polyglot and choose <b>Send Beta Feedback</b>, or email <a href="mailto:gemplay.app@gmail.com">gemplay.app@gmail.com</a>.</p>
 
 <h2>Good to know</h2>
 <p><b>Polyglot Max is free in the beta.</b> Purchases in TestFlight use Apple's test system, so your card is never charged. A beta subscription ends by itself after a few days; you can get it again for free.</p>
@@ -59,22 +85,38 @@
 </section>
 
 <section id="uk" lang="uk">
+<img class="hero" src="beta/poly.png" width="120" height="120" alt="">
 <h1>Спробуйте Polyglot до релізу</h1>
 <p>Polyglot навчає французької, починаючи зі слів, які ви вже знаєте. Бета-версія працює через застосунок Apple TestFlight. Це безплатно і займає приблизно дві хвилини.</p>
 <a class="join" href="https://testflight.apple.com/join/q658wnPg">Приєднатися до бети Polyglot</a>
 <p class="note">Потрібен iPhone з iOS 17 або новішою. Ви за комп'ютером? Відкрийте цю сторінку на iPhone.</p>
 
 <h2>Встановлення</h2>
-<ol>
-  <li>На iPhone натисніть кнопку <b>Приєднатися до бети Polyglot</b> вище.</li>
-  <li>Якщо TestFlight ще немає, сторінка відкриє App Store. Встановіть <b>TestFlight</b> (безплатний застосунок Apple), поверніться сюди й натисніть кнопку ще раз.</li>
-  <li>Натисніть <b>View in TestFlight</b> («Переглянути в TestFlight»), потім <b>Accept</b> («Прийняти») і <b>Install</b> («Інсталювати»).</li>
-  <li>Відкрийте Polyglot з початкового екрана. Маленька крапка біля назви означає, що це бета.</li>
-</ol>
+<div class="step">
+  <h3><span class="num">1</span>Відкрийте запрошення на iPhone</h3>
+  <p>Натисніть <b>Приєднатися до бети Polyglot</b> вище. Відкриється сторінка Apple TestFlight.</p>
+  <img class="shot one" src="beta/step-1-page.svg" width="296" height="596" alt="Сторінка TestFlight: крок 1 — Get TestFlight з кнопкою View in App Store; крок 2 — Join the beta з кнопкою View in TestFlight.">
+</div>
+<div class="step">
+  <h3><span class="num">2</span>Встановіть TestFlight (лише вперше)</h3>
+  <p>Натисніть <span class="m">1</span> <b>View in App Store</b> («Переглянути в App Store») і завантажте <b>TestFlight</b>, безплатний застосунок Apple для бет. Уже є? Переходьте до кроку 3.</p>
+  <img class="shot one" src="beta/step-2-app-store.svg" width="296" height="596" loading="lazy" alt="TestFlight в App Store, позначено кнопку завантаження.">
+</div>
+<div class="step">
+  <h3><span class="num">3</span>Прийміть і встановіть</h3>
+  <p>Поверніться на сторінку TestFlight і натисніть <span class="m">2</span> <b>View in TestFlight</b> («Переглянути в TestFlight»). У TestFlight натисніть <b>Accept</b> («Прийняти»), потім <b>Install</b> («Інсталювати»).</p>
+  <img class="shot two" src="beta/step-3-testflight.svg" width="640" height="596" loading="lazy" alt="TestFlight з Polyglot: спершу кнопка Accept, потім Install.">
+</div>
+<div class="step">
+  <h3><span class="num">4</span>Відкрийте Polyglot</h3>
+  <p>Знайдіть Polyglot на початковому екрані. Маленька помаранчева крапка перед назвою означає, що це бета. Натисніть <b>Get started</b>, і далі вас веде Poly.</p>
+  <img class="shot two" src="beta/step-4-home.svg" width="640" height="596" loading="lazy" alt="Polyglot на початковому екрані з крапкою перед назвою, потім перший екран застосунку.">
+</div>
 
 <h2>Відгуки</h2>
-<p>Це допомагає найбільше. Зробіть скриншот у застосунку, торкніться прев'ю в куті, натисніть <b>Done</b> («Готово») або кнопку «Поділитися» і виберіть <b>Share Beta Feedback</b> (відгук про бету). Напишіть, що було незрозуміло, зламалося чи гальмувало.</p>
-<p>Також можна відкрити TestFlight, вибрати Polyglot і натиснути <b>Send Beta Feedback</b>, або написати на <a href="mailto:gemplay.app@gmail.com">gemplay.app@gmail.com</a>.</p>
+<p>Це допомагає найбільше. <span class="m">1</span> Зробіть скриншот у застосунку й торкніться прев'ю в куті, <span class="m">2</span> натисніть <b>Done</b> («Готово»), <span class="m">3</span> виберіть <b>Share Beta Feedback</b> (відгук про бету). Напишіть, що було незрозуміло, зламалося чи гальмувало.</p>
+<img class="shot two" src="beta/feedback.svg" width="640" height="596" loading="lazy" alt="Прев'ю скриншота в куті Polyglot, потім меню після Done з позначеним Share Beta Feedback.">
+<p style="margin-top:16px">Також можна відкрити TestFlight, вибрати Polyglot і натиснути <b>Send Beta Feedback</b>, або написати на <a href="mailto:gemplay.app@gmail.com">gemplay.app@gmail.com</a>.</p>
 
 <h2>Варто знати</h2>
 <p><b>Polyglot Max у беті безплатний.</b> Покупки в TestFlight проходять через тестову систему Apple, тож з картки нічого не списується. Бета-підписка сама закінчується за кілька днів; її можна знову оформити безплатно.</p>
