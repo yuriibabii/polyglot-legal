@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Відкрити в Claude</title>
+<style>
+  :root { --paper:#FFF9F6; --ink:#3C3C3C; --muted:#6B6B6B; --action:#C9381A; }
+  @media (prefers-color-scheme: dark) { :root { --paper:#1A1614; --ink:#F1E9E3; --muted:#A99C93; --action:#F0704F; } }
+  body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:520px; margin:0 auto; padding:48px 20px; display:grid; gap:14px; }
+  a.btn { display:inline-block; background:var(--action); color:#fff; text-decoration:none; font-weight:600; border-radius:10px; padding:12px 18px; justify-self:start; }
+  p { margin:0; } .muted { color:var(--muted); font-size:15px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 style="margin:0;font-size:22px">Claude</h1>
+  <p class="muted" id="note">Якщо браузер спитає, дозволь відкрити застосунок Claude.</p>
+  <a class="btn" id="go" href="#" hidden>Відкрити в Claude</a>
+</main>
+<script>
+  // Opens a Claude desktop link from a normal browser tab. Only claude:// session links are accepted.
+  // Both kinds wait for a tap: browsers only hand claude:// to the app from a click, and a new session shows its prompt first.
+  (function () {
+    var target = "";
+    try { target = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
+    var go = document.getElementById("go"), h1 = document.querySelector("h1"), note = document.getElementById("note");
+    var existing = /^claude:\/\/claude\.ai\/epitaxy\/local_[0-9a-f-]+$/.test(target);
+    var fresh = /^claude:\/\/code\/new\?/.test(target);
+    if (!existing && !fresh) { h1.textContent = "Посилання не підходить"; note.textContent = "Ця сторінка відкриває тільки сесії Claude."; return; }
+    go.href = target; go.hidden = false;
+    if (existing) { h1.textContent = "Сесія Claude"; note.textContent = "Натисни кнопку, і Claude відкриє цю сесію. Якщо браузер спитає, дозволь відкрити Claude."; go.textContent = "Відкрити сесію"; return; }
+    var q = ""; try { q = new URLSearchParams(target.split("?")[1]).get("q") || ""; } catch (e) {}
+    h1.textContent = "Нова сесія Claude";
+    note.textContent = "Перевір промпт. Claude лише вставить його, надсилаєш ти.";
+    var pre = document.createElement("pre");
+    pre.style.cssText = "white-space:pre-wrap;font:14px/1.45 ui-monospace,Menlo,monospace;background:rgba(127,127,127,.12);padding:12px;border-radius:8px;margin:0";
+    pre.textContent = q; go.before(pre); go.textContent = "Відкрити нову сесію";
+  })();
+</script>
+</body>
+</html>
